@@ -1,0 +1,12 @@
+pane	0	0	:bash	1	:*	0	:/home/benjamin/Codes/FastTrack	1	bash	:
+pane	0	1	:bash	0	:-	0	:/home/benjamin/Codes/FastTrack	0	vim	:vim src/fasttrack-cli.cpp
+pane	0	1	:bash	0	:-	1	:/home/benjamin/Codes/FastTrack	1	bash	:
+pane	0	2	:bash	0	:	0	:/home/benjamin	1	bash	:
+pane	2	0	:bash	1	:*	0	:/analysis/dataSet/ZFA_001/Images	1	bash	:
+pane	4	0	:bash	1	:*	0	:/home/benjamin	1	bash	:
+window	0	0	1	:*	c01d,93x46,0,0,0
+window	0	1	0	:-	dd21,93x46,0,0[93x30,0,0,3,93x15,0,31,6]
+window	0	2	0	:	c026,93x46,0,0,9
+window	2	0	1	:*	c4c4,190x46,0,0,7
+window	4	0	1	:*	628f,190x46,0,0,10
+state	0	
