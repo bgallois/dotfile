@@ -72,21 +72,7 @@ awful.spawn.with_shell(
 -- }}}
 
 -- {{{ Variable definitions
-
-local themes = {
-    "blackburn",       -- 1
-    "copland",         -- 2
-    "dremora",         -- 3
-    "holo",            -- 4
-    "multicolor",      -- 5
-    "powerarrow",      -- 6
-    "powerarrow-dark", -- 7
-    "rainbow",         -- 8
-    "steamburn",       -- 9
-    "vertex",          -- 10
-}
-
-local chosen_theme = themes[6]
+local chosen_theme = "powerarrow"
 local modkey       = "Mod4"
 local altkey       = "Mod3"
 local terminal     = "konsole"
@@ -97,7 +83,7 @@ local guieditor    = "atom"
 local scrlocker    = "slock"
 
 awful.util.terminal = terminal
-awful.util.tagnames = { "1", "2", "3", "4", "5" }
+awful.util.tagnames = { "A", "B", "C", "D", "E", "F", "G"}
 awful.layout.layouts = {
     awful.layout.suit.floating,
     awful.layout.suit.tile,
@@ -266,9 +252,9 @@ globalkeys = my_table.join(
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
               {description = "show help", group="awesome"}),
     -- Tag browsing
-    awful.key({ modkey,           }, "Up",   awful.tag.viewprev,
+    awful.key({ modkey,           }, "Down",   awful.tag.viewprev,
               {description = "view previous", group = "tag"}),
-    awful.key({ modkey,           }, "Down",  awful.tag.viewnext,
+    awful.key({ modkey,           }, "Up",  awful.tag.viewnext,
               {description = "view next", group = "tag"}),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
               {description = "go back", group = "tag"}),
@@ -289,9 +275,9 @@ globalkeys = my_table.join(
 
 
     -- Layout manipulation
-    awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end,
+    awful.key({ modkey, "Shift"   }, "o", function () awful.client.swap.byidx(  1)    end,
               {description = "swap with next client by index", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end,
+    awful.key({ modkey, "Shift"   }, "p", function () awful.client.swap.byidx( -1)    end,
               {description = "swap with previous client by index", group = "client"}),
     awful.key({ modkey, "Control" }, "Left", function () awful.screen.focus_relative( 1) end,
               {description = "focus the next screen", group = "screen"}),
@@ -475,27 +461,6 @@ globalkeys = my_table.join(
     awful.key({ modkey }, "a", function () awful.spawn(guieditor) end,
               {description = "run gui editor", group = "launcher"}),
 
-    -- Default
-    --[[ Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"})
-    --]]
-    --[[ dmenu
-    awful.key({ modkey }, "x", function ()
-            os.execute(string.format("dmenu_run -i -fn 'Monospace' -nb '%s' -nf '%s' -sb '%s' -sf '%s'",
-            beautiful.bg_normal, beautiful.fg_normal, beautiful.bg_focus, beautiful.fg_focus))
-        end,
-        {description = "show dmenu", group = "launcher"})
-    --]]
-    -- alternatively use rofi, a dmenu-like application with more features
-    -- check https://github.com/DaveDavenport/rofi for more details
-    --[[ rofi
-    awful.key({ modkey }, "x", function ()
-            os.execute(string.format("rofi -show %s -theme %s",
-            'run', 'dmenu'))
-        end,
-        {description = "show rofi", group = "launcher"}),
-    --]]
     -- Prompt
     awful.key({ modkey }, "r", function () awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),
