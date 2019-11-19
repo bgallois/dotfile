@@ -1,7 +1,7 @@
 [Appearance]
 BoldIntense=true
 ColorScheme=Material
-Font=Monoid,10,-1,5,50,0,0,0,0,0,Regular
+Font=Monoid,13,-1,5,50,0,0,0,0,0,Regular
 LineSpacing=0
 UseFontLineChararacters=true
 
