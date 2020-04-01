@@ -26,4 +26,5 @@
 #export PILOTRATE=115200
 test -s ~/.alias && . ~/.alias || true
 force_color_prompt=yes
-PS1="\[\e[41m\]\u\[\e[m\]\[\]\[\e[44;31m\]\[\e[37;44m\]\[\] \w \[\e[34;40m\] \[\e[0m\]\[\[\]"
+PS1="\[\e[41m\]\u\[\e[m\]\[\]\[\e[44;31m\]\[\e[37;44m\]\[\] \w \[\e[34;40m\]\[\e[0m\]\[\[\]"
+set -o vi
