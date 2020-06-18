@@ -10,7 +10,7 @@ URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 URxvt.keysym.Control-Meta-c: builtin-string:
 URxvt.keysym.Control-Meta-v: builtin-string:
 
-URxvt.font: xft:hack:pixelsize=14
+URxvt.font: xft:firacode:pixelsize=14
 uRxvt*termName: rxvt
 URxvt*scrollBar: false
 URxvt*scrollBar_floating: false
