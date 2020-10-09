@@ -10,13 +10,13 @@ URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 URxvt.keysym.Control-Meta-c: builtin-string:
 URxvt.keysym.Control-Meta-v: builtin-string:
 
-URxvt.font: xft:firacode:pixelsize=14
+URxvt.font: xft:firacode:pixelsize=15
 uRxvt*termName: rxvt
 URxvt*scrollBar: false
 URxvt*scrollBar_floating: false
 urxvt*matcher.button: 1
 urxvt*depth: 32
-urxvt*background: [75]#161b21
+urxvt*background: [85]#161b21
 Xft*dpi: 96
 Xft*antialias: true
 Xft*hinting: true
@@ -27,41 +27,23 @@ URxvt*geometry: 85x20
 *internalBorder: 2
 URxvt*fading: 0
 URxvt*tintColor: #ffffff
-URxvt*shading: 0
 URxvt*inheritPixmap: False
-! special
-*.foreground:   #aaaaaa
-*.background:   #161b21
-*.cursorColor:  #aaaaaa
 
-! black
-*.color0:       #161b21
-*.color8:       #161b21
-
-! red
-*.color1:       #8b6066
-*.color9:       #8b6066
-
-! green
-*.color2:       #9a7e62
-*.color10:      #9a7e62
-
-! yellow
-*.color3:       #e7d869
-*.color11:      #e7d869
-
-! blue
-*.color4:       #354f73
-*.color12:      #354f73
-
-! magenta
-*.color5:       #55465b
-*.color13:      #55465b
-
-! cyan
-*.color6:       #716467
-*.color14:      #716467
-
-! white
-*.color7:       #aaaaaa
-*.color15:      #a7a9a8
+URxvt*background:        #282A36
+URxvt*foreground:        #F8F8FF
+URxvt*color0: #3f3f3f
+URxvt*color1: #ac3c3c
+URxvt*color2: #60b48a
+URxvt*color3: #dfaf8f
+URxvt*color4: #506070
+URxvt*color5: #dc8cc3
+URxvt*color6: #8cd0d3
+URxvt*color7: #dcdccc
+URxvt*color8: #79A9FF
+URxvt*color9: #da6e6e
+URxvt*color10: #c3bf9f
+URxvt*color11: #f0dfaf
+URxvt*color12: #94bff3
+URxvt*color13: #ec93d3
+URxvt*color14: #93e0e3
+URxvt*color15: #ffffff

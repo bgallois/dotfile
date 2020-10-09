@@ -24,12 +24,14 @@
 #
 #export PILOTPORT=/dev/pilot
 #export PILOTRATE=115200
+
 test -s ~/.alias && . ~/.alias || true
 force_color_prompt=yes
-PS1="\[\e[41m\]\u\[\e[m\]\[\]\[\e[44;31m\]\[\e[37;44m\]\[\] \w \[\e[34;40m\]\[\e[0m\]\[\[\]"
+PS1="\[\e[41;39m\]\u\[\e[m\]\[\]\[\e[104;31m\]\[\e[39;104m\]\[\] \w \[\e[94;49m\]\[\e[0m\]\[\[\]"
 set -o vi
 export GPG_TTY=$(tty)
 export LS_COLORS="di=0:ln=35:so=32:pi=33:ex=31:bd=34;"
 alias ls='ls --color=auto'
 export EDITOR=vim
 export VISUAL=vim
+neofetch
