@@ -34,4 +34,8 @@ export LS_COLORS="di=0:ln=35:so=32:pi=33:ex=31:bd=34;"
 alias ls='ls --color=auto'
 export EDITOR=vim
 export VISUAL=vim
-neofetch
+if [[ $- =~ "i" ]]
+  then
+  neofetch
+fi
+
