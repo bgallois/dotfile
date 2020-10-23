@@ -1,0 +1,37 @@
+source ~/.mutt/account.fasttrack.sh 
+
+macro index <f2> '<sync-mailbox><enter-command>source ~/.mutt/account.fasttrack.sh<enter><change-folder>!<enter>'
+macro index <f3> '<sync-mailbox><enter-command>source ~/.mutt/account.gallois.cc<enter><change-folder>!<enter>'
+
+bind index G imap-fetch-mail
+bind index,pager k previous-entry
+bind index,pager j next-entry
+bind index,pager g noop
+bind index,pager \Cu half-up
+bind index,pager \Cd half-down
+bind pager gg top
+bind index gg first-entry
+bind pager G bottom
+bind index G last-entry
+
+color normal white default
+color status brightgreen blue
+color search brightyellow red
+color message brightyellow default
+color error brightred default
+color markers brightred default
+color header brightyellow default ^(From):
+color header brightwhite default ^(Subject):
+color header yellow default ^(To):
+color header green default ^(Date):
+color header white default ^(In-Reply-To):
+color hdrdefault magenta default
+
+set sidebar_visible = yes
+set sidebar_delim_chars = '/.'
+set sidebar_indent_string = '  '
+set mail_check_stats
+bind index,pager B sidebar-toggle-visible
+bind index,pager \Cp sidebar-prev
+bind index,pager \Cn sidebar-next
+bind index,pager \Co sidebar-open
