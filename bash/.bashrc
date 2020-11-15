@@ -3,7 +3,8 @@ test -s ~/.alias && . ~/.alias || true
 
 # Prompt
 force_color_prompt=yes
-PS1="\[\e[41;39m\]\u\[\e[m\]\[\]\[\e[104;31m\]\[\e[39;104m\]\[\] \w \[\e[94;49m\]\[\e[0m\]\[\[\]"
+#PS1="\[\e[41;39m\]\u\[\e[m\]\[\]\[\e[104;31m\]\[\e[39;104m\]\[\] \w \[\e[94;49m\]\[\e[0m\]\[\[\]"
+PS1="\[\e[39;93m\]\[\] \w \[\e[91;49m\]♥❯ \[\e[0m\]\[\[\]"
 set -o vi
 export GPG_TTY=$(tty)
 export LS_COLORS="di=0:ln=35:so=32:pi=33:ex=31:bd=34;"
@@ -22,3 +23,5 @@ alias 4.='cd ../../../..'
 alias 5.='cd ../../../../..'
 
 eval $(keychain --eval --agents ssh id_benjamin)
+
+clear
