@@ -2,7 +2,7 @@
       user-mail-address "benjamin@gallois.cc")
 
 (setq doom-font (font-spec :family "firacode" :size 15))
-(setq doom-theme 'doom-city-lights)
+;;(setq doom-theme 'doom-city-lights)
 
 (setq org-directory "~/org/")
 
