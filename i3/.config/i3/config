@@ -20,7 +20,7 @@ bindsym $mod+Return exec /usr/bin/alacritty
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id rofi -theme solarized_alternate -font "hack 20" -show run
+bindsym $mod+d exec --no-startup-id rofi -show drun -theme .config/rofi/theme -show run
 
 # change focus
 bindsym $mod+j focus left
