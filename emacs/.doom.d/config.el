@@ -2,7 +2,6 @@
       user-mail-address "benjamin@gallois.cc")
 
 (setq doom-font (font-spec :family "firacode" :size 15))
-;;(setq doom-theme 'doom-city-lights)
 
 (setq org-directory "~/org/")
 
@@ -11,3 +10,5 @@
 (setq evil-escape-key-sequence "ii")
 
 (setq confirm-kill-emacs nil)
+
+(remove-hook 'doom-first-buffer-hook #'smartparens-global-mode)
