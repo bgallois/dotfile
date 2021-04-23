@@ -1,7 +1,9 @@
 (setq user-full-name "bgallois"
       user-mail-address "benjamin@gallois.cc")
 
-(setq doom-font (font-spec :family "firacode" :size 15))
+(setq doom-font (font-spec :family "roboto mono" :size 14))
+
+(setq doom-theme 'doom-oceanic-next)
 
 (setq org-directory "~/org/")
 

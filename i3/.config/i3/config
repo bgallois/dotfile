@@ -227,9 +227,9 @@ client.placeholder #aab0bc #131822 #aab0bc #233f66 #233f66
 client.background #131822
 
 # Gaps
-gaps inner 10
+gaps inner 12
 gaps outer -4
-gaps top 20
+gaps top 24
 
 #smart_gaps on
 
