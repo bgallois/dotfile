@@ -13,6 +13,7 @@ export EDITOR=vim
 export VISUAL=vim
 export TERM="xterm-256color"
 export MANPAGER="/bin/sh -c \"col -b | vim --not-a-term -c 'set ft=man ts=8 nomod nolist noma' -\""
+export PROMPT_COMMAND='history -a'
 
 [[ $- != *i* ]] && return
 
