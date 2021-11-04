@@ -22,6 +22,12 @@ alias ...='cd ../..'
 alias 3.='cd ../../..'
 alias 4.='cd ../../../..'
 alias 5.='cd ../../../../..'
+alias debug='./run.sh debug'
+
+bind '"OP":"sudo pacman -Syyu"' #F1
+bind '"OQ":"emacs"' #F2
+bind '"OS":"./run.sh debug"' #F4
+bind '"[15~":"./run.sh release"' #F5
 
 eval $(keychain --eval --agents ssh id_benjamin)
 

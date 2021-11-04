@@ -1,13 +1,10 @@
 set $mod Mod4
 
-new_window pixel 1
+new_window pixel 4
 new_float normal
 
-hide_edge_borders none
-
-bindsym $mod+u border none
-bindsym $mod+y border pixel 1
-bindsym $mod+n border normal
+smart_borders on
+hide_edge_borders smart_no_gaps
 
 font xft:URWGothic-Book 11
 #exec xcompmgr -c -f -n
@@ -153,6 +150,7 @@ for_window [class="Thus"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
+for_window [class="OpenJournal"] floating enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -219,7 +217,7 @@ exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id $HOME/.config/polybar/i3wmthemer_bar_launch.sh
 
 # Theme colors
-client.focused #aab0bc #131822 #aab0bc #233f66 #233f66
+client.focused #4280fc #131822 #aab0bc #5294e2 #5294e2
 client.focused_inactive #aab0bc #131822 #aab0bc #233f66 #233f66
 client.unfocused #aab0bc #131822 #aab0bc #233f66 #233f66
 client.urgent #aab0bc #131822 #aab0bc #233f66 #233f66

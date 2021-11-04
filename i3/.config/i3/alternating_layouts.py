@@ -48,6 +48,9 @@ def print_help():
     print("    -p path/to/pid.file   Saves the PID for this program in the filename specified")
     print("")
 
+def on_focus(i3, e):
+    i3.command('[class=".*"] border none')
+    i3.command('border pixel 4')
 
 def main():
     """
@@ -70,8 +73,8 @@ def main():
 
     i3 = Connection()
     i3.on(Event.WINDOW_FOCUS, set_layout)
+    i3.on('window::focus', on_focus)
     i3.main()
-
 
 if __name__ == "__main__":
     main()
