@@ -24,10 +24,15 @@ alias 4.='cd ../../../..'
 alias 5.='cd ../../../../..'
 alias debug='./run.sh debug'
 
-bind '"OP":"sudo pacman -Syyu"' #F1
-bind '"OQ":"emacs"' #F2
+bind '"OP":"git log --pretty=format:\"%C(bold red)❤ %C(bold yellow)%h%Creset ➜%C(bold magenta)%d\%Creset %C(bold)%s %C(bold green)(%cr) %C(bold blue)<\%an>\%Creset\" --abbrev-commit"' #F1
+bind '"OQ":"git log --all --graph --pretty=format:\"%C(bold red)❤ %C(bold yellow)%h%Creset ➜%C(bold magenta)%d\%Creset %C(bold)%s %C(bold green)(%cr) %C(bold blue)<\%an>\%Creset\" --abbrev-commit"' #F2
+bind '"OR":"./run.sh release"' #F3
 bind '"OS":"./run.sh debug"' #F4
-bind '"[15~":"./run.sh release"' #F5
+
+bind '"[15~":"git status"' #F5
+bind '"[17~":"git add -A"' #F6
+bind '"[18~":"git commit"' #F7
+bind '"[19~":"git push"' #F8
 
 eval $(keychain --eval --agents ssh id_benjamin)
 
