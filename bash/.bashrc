@@ -22,7 +22,8 @@ alias ...='cd ../..'
 alias 3.='cd ../../..'
 alias 4.='cd ../../../..'
 alias 5.='cd ../../../../..'
-alias debug='./run.sh debug'
+alias toron="echo -n 'Before: ' ; wget -qO - icanhazip.com ; . torsocks on ; echo -n 'After: ' ; wget -qO - icanhazip.com"
+alias toroff="echo -n 'Before: ' ; wget -qO - icanhazip.com ; . torsocks off ; echo -n 'After: ' ; wget -qO - icanhazip.com"
 
 bind '"OP":"git log --pretty=format:\"%C(bold red)❤ %C(bold yellow)%h%Creset ➜%C(bold magenta)%d\%Creset %C(bold)%s %C(bold green)(%cr) %C(bold blue)<\%an>\%Creset\" --abbrev-commit"' #F1
 bind '"OQ":"git log --all --graph --pretty=format:\"%C(bold red)❤ %C(bold yellow)%h%Creset ➜%C(bold magenta)%d\%Creset %C(bold)%s %C(bold green)(%cr) %C(bold blue)<\%an>\%Creset\" --abbrev-commit"' #F2
