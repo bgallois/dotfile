@@ -20,9 +20,9 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = "FiraCode Semibold:size=10;1"
-font-1 = "FiraCode Free:style=Solid:size=10;1"
-font-2 = "FiraCode Brands:size=10;1"
+font-0 = "Roboto Semibold:size=10;1"
+font-1 = "Roboto Free:style=Solid:size=10;1"
+font-2 = "Roboto Brands:size=10;1"
 
 modules-center = i3
 modules-right = pulseaudio battery wireless-network date
