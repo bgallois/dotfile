@@ -54,9 +54,6 @@ set matchpairs+=<:>,「:」,『:』,【:】,“:”,‘:’,《:》
 
 set number
 
-" Ignore case in general, but become case-sensitive when uppercase is present
-set ignorecase smartcase
-
 " File and script encoding settings for vim
 set fileencoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
@@ -90,9 +87,6 @@ set history=500  " The number of command and search history to keep
 " Use list mode and customized listchars
 set list listchars=tab:▸\ ,extends:❯,precedes:❮,nbsp:␣
 
-" Auto-write the file based on some condition
-set autowrite
-
 " Show hostname, full path of file and last-mod time on the window title. The
 " meaning of the format str for strftime can be found in
 " http://man7.org/linux/man-pages/man3/strftime.3.html. The function to get
@@ -112,31 +106,8 @@ set shortmess+=c
 " choice, IMHO.
 set shortmess+=S
 
-" Completion behaviour
-" set completeopt+=noinsert  " Auto select the first completion entry
-set completeopt+=menuone  " Show menu even if there is only one item
-set completeopt-=preview  " Disable the preview window
-
-set pumheight=10  " Maximum number of items to show in popup menu
-set pumblend=10  " pseudo transparency for completion menu
-
-set winblend=5  " pseudo transparency for floating window
-
-" Insert mode key word completion setting
-set complete+=kspell complete-=w complete-=b complete-=u complete-=t
-
-set spelllang=en,cjk  " Spell languages
-set spellsuggest+=9  " show 9 spell suggestions at most
-
-" Align indent to next multiple value of shiftwidth. For its meaning,
-" see http://vim.1045645.n5.nabble.com/shiftround-option-td5712100.html
-set shiftround
 
 set virtualedit=block  " Virtual edit is useful for visual block edit
-
-" Correctly break multi-byte characters such as CJK,
-" see https://stackoverflow.com/q/32669814/6064933
-set formatoptions+=mM
 
 " Tilde (~) is an operator, thus must be followed by motions like `e` or `w`.
 set tildeop
@@ -172,5 +143,3 @@ set diffopt+=filler  " show filler for deleted lines
 set diffopt+=closeoff  " turn off diff when one file window is closed
 set diffopt+=context:3  " context for diff
 set diffopt+=internal,indent-heuristic,algorithm:histogram
-
-set nowrap  " do no wrap

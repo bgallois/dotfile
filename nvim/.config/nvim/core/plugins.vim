@@ -16,24 +16,6 @@ call utils#Cabbrev('ps', 'PackerSync')
 "                      configurations for vim script plugin                  "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"""""""""""""""""""""""""UltiSnips settings"""""""""""""""""""
-" Trigger configuration. Do not use <tab> if you use YouCompleteMe
-let g:UltiSnipsExpandTrigger='<c-j>'
-
-" Do not look for SnipMate snippets
-let g:UltiSnipsEnableSnipMate = 0
-
-" Shortcut to jump forward and backward in tabstop positions
-let g:UltiSnipsJumpForwardTrigger='<c-j>'
-let g:UltiSnipsJumpBackwardTrigger='<c-k>'
-
-" Configuration for custom snippets directory, see
-" https://jdhao.github.io/2019/04/17/neovim_snippet_s1/ for details.
-let g:UltiSnipsSnippetDirectories=['UltiSnips', 'my_snippets']
-
-"""""""""""""""""""""""""" vlime settings """"""""""""""""""""""""""""""""
-command! -nargs=0 StartVlime call jobstart(printf("sbcl --load %s/vlime/lisp/start-vlime.lisp", g:package_home))
-
 """""""""""""""""""""""""""""LeaderF settings"""""""""""""""""""""
 " Do not use cache file
 let g:Lf_UseCache = 0
@@ -178,15 +160,6 @@ let g:signify_vcs_list = [ 'git' ]
 " Change the sign for certain operations
 let g:signify_sign_change = '~'
 
-"""""""""""""""""""""""""vim-fugitive settings""""""""""""""""""""""""""""""
-nnoremap <silent> <leader>gs :Git<CR>
-nnoremap <silent> <leader>gw :Gwrite<CR>
-nnoremap <silent> <leader>gc :Git commit<CR>
-nnoremap <silent> <leader>gd :Gdiffsplit<CR>
-nnoremap <silent> <leader>gpl :Git pull<CR>
-" Note that to use bar literally, we need backslash it, see also `:h :bar`.
-nnoremap <silent> <leader>gpu :15split \| term git push<CR>
-
 """""""""""""""""""""""""plasticboy/vim-markdown settings"""""""""""""""""""
 " Disable header folding
 let g:vim_markdown_folding_disabled = 1
@@ -242,73 +215,6 @@ endif
 """"""""""""""""""""""""unicode.vim settings""""""""""""""""""""""""""""""
 nmap ga <Plug>(UnicodeGA)
 
-""""""""""""""""""""""""""""vim-sandwich settings"""""""""""""""""""""""""""""
-" Map s to nop since s in used by vim-sandwich. Use cl instead of s.
-nmap s <Nop>
-omap s <Nop>
-
-""""""""""""""""""""""""""""vimtex settings"""""""""""""""""""""""""""""
-if ( g:is_win || g:is_mac ) && executable('latex')
-  " Hacks for inverse serach to work semi-automatically,
-  " see https://jdhao.github.io/2021/02/20/inverse_search_setup_neovim_vimtex/.
-  function! s:write_server_name() abort
-    let nvim_server_file = (has('win32') ? $TEMP : '/tmp') . '/vimtexserver.txt'
-    call writefile([v:servername], nvim_server_file)
-  endfunction
-
-  augroup vimtex_common
-    autocmd!
-    autocmd FileType tex call s:write_server_name()
-    autocmd FileType tex nmap <buffer> <F9> <plug>(vimtex-compile)
-  augroup END
-
-  let g:vimtex_compiler_latexmk = {
-        \ 'build_dir' : 'build',
-        \ }
-
-  " TOC settings
-  let g:vimtex_toc_config = {
-        \ 'name' : 'TOC',
-        \ 'layers' : ['content', 'todo', 'include'],
-        \ 'resize' : 1,
-        \ 'split_width' : 30,
-        \ 'todo_sorted' : 0,
-        \ 'show_help' : 1,
-        \ 'show_numbers' : 1,
-        \ 'mode' : 2,
-        \ }
-
-  " Viewer settings for different platforms
-  if g:is_win
-    let g:vimtex_view_general_viewer = 'SumatraPDF'
-    let g:vimtex_view_general_options = '-reuse-instance -forward-search @tex @line @pdf'
-  endif
-
-  if g:is_mac
-    " let g:vimtex_view_method = "skim"
-    let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/SharedSupport/displayline'
-    let g:vimtex_view_general_options = '-r @line @pdf @tex'
-
-    augroup vimtex_mac
-      autocmd!
-      autocmd User VimtexEventCompileSuccess call UpdateSkim()
-    augroup END
-
-    " The following code is adapted from https://gist.github.com/skulumani/7ea00478c63193a832a6d3f2e661a536.
-    function! UpdateSkim() abort
-      let l:out = b:vimtex.out()
-      let l:src_file_path = expand('%:p')
-      let l:cmd = [g:vimtex_view_general_viewer, '-r']
-
-      if !empty(system('pgrep Skim'))
-        call extend(l:cmd, ['-g'])
-      endif
-
-      call jobstart(l:cmd + [line('.'), l:out, l:src_file_path])
-    endfunction
-  endif
-endif
-
 """"""""""""""""""""""""""""vim-startify settings""""""""""""""""""""""""""""
 " Do not change working directory when opening files.
 let g:startify_change_to_dir = 0
@@ -337,80 +243,3 @@ if g:is_win
   let g:asyncrun_encs = 'gbk'
 endif
 
-""""""""""""""""""""""""""""""firenvim settings""""""""""""""""""""""""""""""
-if exists('g:started_by_firenvim') && g:started_by_firenvim
-  if g:is_mac
-    set guifont=Iosevka\ Nerd\ Font:h18
-  else
-    set guifont=Consolas
-  endif
-
-  " general config for firenvim
-  let g:firenvim_config = {
-      \ 'globalSettings': {
-          \ 'alt': 'all',
-      \  },
-      \ 'localSettings': {
-          \ '.*': {
-              \ 'cmdline': 'neovim',
-              \ 'priority': 0,
-              \ 'selector': 'textarea',
-              \ 'takeover': 'never',
-          \ },
-      \ }
-  \ }
-
-  augroup firenvim
-    autocmd!
-    autocmd BufEnter *.txt setlocal filetype=markdown laststatus=0 nonumber noshowcmd noruler showtabline=1
-  augroup END
-endif
-
-""""""""""""""""""""""""""""""nvim-gdb settings""""""""""""""""""""""""""""""
-nnoremap <leader>dp :<C-U>GdbStartPDB python -m pdb %<CR>
-
-""""""""""""""""""""""""""""""wilder.nvim settings""""""""""""""""""""""""""""""
-call timer_start(250, { -> s:wilder_init() })
-
-function! s:wilder_init() abort
-  try
-    call wilder#setup({
-          \ 'modes': [':', '/', '?'],
-          \ 'next_key': '<Tab>',
-          \ 'previous_key': '<S-Tab>',
-          \ 'accept_key': '<C-y>',
-          \ 'reject_key': '<C-e>'
-          \ })
-
-    call wilder#set_option('pipeline', [
-          \   wilder#branch(
-          \     wilder#cmdline_pipeline({
-          \       'language': 'python',
-          \       'fuzzy': 1,
-          \       'sorter': wilder#python_difflib_sorter(),
-          \       'debounce': 30,
-          \     }),
-          \     wilder#python_search_pipeline({
-          \       'pattern': wilder#python_fuzzy_pattern(),
-          \       'sorter': wilder#python_difflib_sorter(),
-          \       'engine': 're',
-          \       'debounce': 30,
-          \     }),
-          \   ),
-          \ ])
-
-    let l:hl = wilder#make_hl('WilderAccent', 'Pmenu', [{}, {}, {'foreground': '#f4468f'}])
-    call wilder#set_option('renderer', wilder#popupmenu_renderer({
-          \ 'highlighter': wilder#basic_highlighter(),
-          \ 'max_height': 15,
-          \ 'highlights': {
-          \   'accent': l:hl,
-          \ },
-          \ 'left': [' ', wilder#popupmenu_devicons(),],
-          \ 'right': [' ', wilder#popupmenu_scrollbar(),],
-          \ 'apply_incsearch_fix': 0,
-          \ }))
-  catch /^Vim\%((\a\+)\)\=:E117/
-    echohl Error |echomsg "Wilder.nvim missing: run :PackerSync to fix."|echohl None
-  endtry
-endfunction
