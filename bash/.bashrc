@@ -26,15 +26,13 @@ alias toron="echo -n 'Before: ' ; wget -qO - icanhazip.com ; . torsocks on ; ech
 alias toroff="echo -n 'Before: ' ; wget -qO - icanhazip.com ; . torsocks off ; echo -n 'After: ' ; wget -qO - icanhazip.com"
 
 bind '"OP":"git log --pretty=format:\"%C(bold red)❤ %C(bold yellow)%h%Creset ➜%C(bold magenta)%d\%Creset %C(bold)%s %C(bold green)(%cr) %C(bold blue)<\%an>\%Creset\" --abbrev-commit"' #F1
-bind '"OQ":"git log --all --graph --pretty=format:\"%C(bold red)❤ %C(bold yellow)%h%Creset ➜%C(bold magenta)%d\%Creset %C(bold)%s %C(bold green)(%cr) %C(bold blue)<\%an>\%Creset\" --abbrev-commit"' #F2
-bind '"OR":"./run.sh release"' #F3
-bind '"OS":"./run.sh debug"' #F4
+bind '"OQ":"clear ; cargo run -- --dev"' #F2
+bind '"OR":"clear ; cargo test --workspace --exclude duniter-end2end-tests --exclude duniter-live-tests --features runtime-benchmarks"' #F3
+bind '"OS":"clear ; cargo build --release --features runtime-benchmarks"' #F4
 
 bind '"[15~":"git status"' #F5
-bind '"[17~":"git add -A"' #F6
+bind '"[17~":"git add -u"' #F6
 bind '"[18~":"git commit"' #F7
 bind '"[19~":"git push"' #F8
 
 eval $(keychain --eval --agents ssh id_benjamin)
-
-clear
