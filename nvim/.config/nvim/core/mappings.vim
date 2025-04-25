@@ -35,7 +35,8 @@ map <C-Left> <C-W>h
 map <C-Right> <C-W>l
 map <C-Up> gT
 map <C-Down> gt
-inoremap ii <Esc> 
+inoremap ii <Esc>
+nnoremap tt <Cmd>Neotree toggle<CR>
 
 " tmux will send xterm-style keys when its xterm-keys option is on
 if &term =~ '^screen'
