@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+SCRIPTPATH="$( cd "$(dirname "$0")" || return ; pwd -P )"
+
+"$SCRIPTPATH"/polybar/i3wmthemer_bar_launch.sh
+leftwm-command "LoadTheme $SCRIPTPATH/theme.ron"

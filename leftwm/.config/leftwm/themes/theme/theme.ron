@@ -1,0 +1,10 @@
+#![enable(implicit_some)]
+(
+    gutter: [(
+           side: Top,
+        value: 0,
+        )],
+    border_width: 1,
+    margin: [2, 2, 2, 2],
+    focused_border_color: "#5294e2"
+)
