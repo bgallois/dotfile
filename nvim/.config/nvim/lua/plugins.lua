@@ -133,7 +133,6 @@ require("packer").startup({
     use({ "skywind3000/asyncrun.vim", opt = true, cmd = { "AsyncRun" } })
     -- Another asynchronous plugin
     -- Plug 'tpope/vim-dispatch'
-
     use({
       "nvim-neo-tree/neo-tree.nvim",
       branch = "v3.x",

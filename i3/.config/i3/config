@@ -17,7 +17,7 @@ bindsym $mod+Return exec /usr/bin/alacritty
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id rofi -show drun -theme .config/rofi/theme -show run
+bindsym $mod+d exec ./.dmenu.sh
 
 # change focus
 bindsym $mod+h focus left
@@ -206,9 +206,10 @@ mode "resize" {
 }
 
 # Autostart applications
-exec_always --no-startup-id ~/.config/i3/alternating_layouts.py
-exec --no-startup-id nitrogen --restore; sleep 1; compton -b
-exec --no-startup-id nm-applet
+exec_always --no-startup-id ~/miniconda3/bin/python3 /home/guest/.config/i3/alternating_layouts.py
+exec_always --no-startup-id xwallpaper --stretch dotfile/i3/usr/share/backgrounds/background.jpg
+exec_always --no-startup-id xcompmgr -c -f -n
+exec_always --no-startup-id nm-applet
 # exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit

@@ -20,13 +20,13 @@
     ],
     layouts: [
         "Dwindle",
+        "EvenVertical",
         "Fibonacci",
         "Grid",
         "CenterMain",
         "Monocle",
         "MainAndDeck",
         "EvenHorizontal",
-        "EvenVertical",
         "MainAndVertStack",
         "MainAndHorizontalStack",
         "RightMainAndVertStack",
@@ -67,7 +67,7 @@
     focus_on_activation: MarkUrgent,
     window_hiding_strategy: MoveOnly,
     keybind: [
-        (command: Execute, value: "rofi -show drun -theme .config/rofi/theme -show run", modifier: ["modkey"], key: "d"),
+        (command: Execute, value: "./.dmenu.sh", modifier: ["modkey"], key: "d"),
         (command: Execute, value: "alacritty", modifier: ["modkey"], key: "Return"),
         (command: ToggleFullScreen, value: "", modifier: ["modkey"], key: "f"),
         (command: CloseWindow, value: "", modifier: ["modkey", "Shift"], key: "q"),
