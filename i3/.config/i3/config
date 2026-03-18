@@ -11,13 +11,14 @@ font xft:URWGothic-Book 11
 
 floating_modifier $mod
 
-bindsym $mod+Return exec /usr/bin/alacritty
+bindsym $mod+Return exec /usr/bin/kitty
 
 # Window kill command
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec ./.dmenu.sh
+#bindsym $mod+d exec ./.dmenu.sh
+bindsym $mod+d exec --no-startup-id rofi -show drun -theme .config/rofi/theme -show run
 
 # change focus
 bindsym $mod+h focus left
@@ -217,6 +218,10 @@ exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id $HOME/.config/polybar/i3wmthemer_bar_launch.sh
 
+exec --no-startup-id xset s off
+exec --no-startup-id xset -dpms
+exec --no-startup-id xset s noblank
+
 # Theme colors
 client.focused #4280fc #131822 #aab0bc #5294e2 #5294e2
 client.focused_inactive #aab0bc #131822 #aab0bc #233f66 #233f66
@@ -284,3 +289,5 @@ bindsym XF86TouchpadOff exec --no-startup-id synclient Touchpadoff=1
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+include ~/.config/i3/workspace-outputs.conf
